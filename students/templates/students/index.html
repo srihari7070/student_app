@@ -1,0 +1,38 @@
+{% extends 'students/base.html' %}
+
+ {% block body%}
+
+<h2>All Student List</h2>
+ {% if stud_list %}
+    <table border="1">
+        <tr>
+            <th>Studen Id</th>
+            <th>First Name</th>
+            <th>Last Name </th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Phone</th>
+             <th>Action</th>
+
+        </tr>
+
+            {% for student in stud_list %}
+                <tr>
+                    <td>{{student.id}}</td>
+                    <td>{{student.fname}}</td>
+                    <td>{{student.lname}}</td>
+                    <td>{{student.email}}</td>
+                    <td>{{student.address}}</td>
+                    <td>{{student.mobile}}</td>
+                    <td><a href="{% url 'students:edit' student.id %}">Edit</a>/<a href="{% url 'students:deletes' student.id %}">Delete</a</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <h2>Non Records Found</h2>
+        {% endif %}
+    </table>
+{% endblock%}
+
+
+
+

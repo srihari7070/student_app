@@ -1,0 +1,31 @@
+{% extends 'students/base.html' %}
+
+{% block body %}
+<h1>Student Registration:</h1>
+
+<form method="post">
+   {% csrf_token %}
+  <div>
+    <label>First Name</label>:{{form.fname}}
+  </div><br>
+   <div>
+      <label>Last Name</label>: {{form.lname}}
+  </div><br>
+   <div>
+     <label>Email Address</label>: {{form.email}}
+  </div><br>
+   <div>
+     <label>Address</label>: {{form.address}}
+  </div><br>
+   <div>
+     <label>Password</label>: {{form.password}}
+  </div><br>
+     <div>
+     <label>Phone</label>: {{form.mobile}}
+  </div><br>
+
+  <button type="submit">Submit</button>
+</form>
+{% endblock%}
+
+
