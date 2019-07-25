@@ -1,0 +1,21 @@
+
+{% extends 'plo/base.html' %}
+{% block body %}
+{% if dep_list %}
+<div class="container">
+    <div class="jumbotron">
+  <h1>Welcome to our site.</h1><div class="alert alert-success">
+  <strong>Click the login button to login</strong>
+</div>
+<div class="alert alert-info">
+  <strong>Click the sign-up button to sign-up</strong>
+</div>
+
+        <a href="http://127.0.0.1:8000/customer/about/"><span class="glyphicon glyphicon-user"></span><button type="button" class="btn btn-default">About</button></a>
+<button type="button" class="btn btn-primary">Contact Us</button>
+
+</div>
+{% else %}
+    <h2>no record found</h2>
+{% endif %}
+{% endblock %}

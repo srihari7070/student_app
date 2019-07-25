@@ -1,0 +1,23 @@
+{% extends 'plo/base.html' %}
+{% block body %}
+
+<div>
+    <form method="post">
+        {% csrf_token %}
+          <div>
+              <label>User name</label> {{form.user_name}}
+          </div>
+        <div><label>password</label> {{form.password}}
+          </div>
+         <div>
+              <label>Email</label> {{form.email}}
+          </div>
+
+        <div>
+
+                <button type="submit">submit</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
